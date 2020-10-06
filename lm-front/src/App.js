@@ -1,11 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/index'
+
+import Router from './components/Router'
 
 function App() {
   return (
-    <div className="App">
-     
+    <div id='app'>
+      <Header />
+      <section id='body'>
+        <Router />
+      </section>
     </div>
   );
 }
