@@ -17,8 +17,6 @@ const Header = () => {
             <Container>
                 <Logo src={ImgLogo} alt="Logo" />
 
-                <Title>Funcionários</Title>
-
                 <IconHeader text={'Listar'} page={'lista-de-funcionarios'}/>
 
                 <IconHeader text={'Adicionar'} page={'adicionar-funcionario'}/>

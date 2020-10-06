@@ -6,9 +6,11 @@ import Router from './components/Router'
 
 function App() {
   return (
-    <div id="app">
+    <div id='app'>
       <Header />
-      <Router />
+      <section id='body'>
+        <Router />
+      </section>
     </div>
   );
 }

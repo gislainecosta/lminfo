@@ -4,8 +4,8 @@ import {
 } from './styles';
 
 const AddEmployee = () => (
-    <div>
-        <p>Adicionar</p>
+    <div id="home">
+        <p>Lista</p>
     </div>
 );
 

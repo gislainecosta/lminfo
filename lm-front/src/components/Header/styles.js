@@ -8,7 +8,6 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    margin: 0;
     height: 16vh;
     position: fixed;
     top:0;
@@ -23,14 +22,18 @@ export const Container = styled.div`
 export const Shadow = styled.div`
     height: 18vh;
     width: 100vw;
+    z-index: 90;
+    position: fixed;
+    top:0;
+    left: 0;
     border-radius: 25%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.9);
     filter: blur(12px);
 `;
 
 export const Logo = styled.img`
     height: 95%;
-    margin-left: 5%;
+    margin: 0 40% 0 5%;
 `;
 
 export const IconContainer = styled.section`
