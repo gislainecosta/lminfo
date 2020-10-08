@@ -6,7 +6,12 @@
 2. Moment
 3. SQL
 
-Para rodar o Backend na sua máquina, faça o clone do reposítorio, depois rode npm install para instalar os pacotes e npm start para rodar a aplicação. Porém é importante que você tenha uma cópia do banco, para isso rode o código no final deste3 documento no seu DBMS (DataBank Management)
+Para rodar o Backend na sua máquina:
+ 1) Faça o clone do reposítorio
+ 2) Rodenpm install para instalar os pacotes
+ 3) Adicione um arquivo .env na raiz do seu projeto com as variáveis do seu banco
+ 4) npm start para rodar a aplicação.
+ Porém é importante que você tenha uma cópia do banco, para isso rode o código no final deste documento no seu DBMS (DataBank Management)
 <br><br>
 
 
