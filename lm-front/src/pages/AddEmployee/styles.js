@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 export const InputNumber = withStyles({
     root: {
@@ -17,6 +19,27 @@ export const InputNumber = withStyles({
     }
 })(TextField);
 
+export const ContainerSelect = withStyles({
+    root: {
+        marginBottom: '2%',
+        width: '60%',
+        backgroundColor: 'rgba(0, 162, 255, 0.1)',
+        borderRadius: '10px 10px 0 0',
+        '& > *': {
+            color: '#00d8ff',
+        }
+    }
+})(FormControl);
+
+export const SelectInput = withStyles({
+    root: {
+        borderRadius: '10px 10px 0 0',
+        '& > *': {
+            color: '#00d8ff',
+        }
+    }
+})(Select);
+
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -30,9 +53,9 @@ export const Container = styled.div`
 export const Form = styled.form`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     width: 100%;
-    height: 42vh;
+    height: 60vh;
     align-items: center;
     justify-items: center;
     margin-bottom: 5%;
@@ -48,7 +71,7 @@ export const Title = styled.h1`
 `;
 
 export const DropContainer = styled.section`
-    grid-area: 1/1/3/2;
+    grid-area: 1/1/4/2;
     background-color: rgba(0, 162, 255, 0.1);
     width: 90%;
     height: 90%;

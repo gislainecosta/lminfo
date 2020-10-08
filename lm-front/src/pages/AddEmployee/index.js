@@ -1,4 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import Context from '../../functions/Context';
+
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
@@ -10,10 +15,13 @@ import {
     Form,
     Title,
     InputNumber,
-    DropContainer
+    DropContainer,
+    ContainerSelect,
+    SelectInput,
 } from './styles';
 
 const AddEmpoylee = () => {
+    const officeContext = useContext(Context);
     const [values, setValues] = useState({
         name: '',
         surname: '',
@@ -31,9 +39,12 @@ const AddEmpoylee = () => {
     };
 
     const sendForm = () =>{
-        console.log(values.birthDate)
+        setValues('');
     }
 
+    const options = officeContext.offices.map((office) => {
+        return <MenuItem value={office.type}>{office.type}</MenuItem>
+    });
 
     return(
         <Container onSubmit={submitForm}>
@@ -70,8 +81,21 @@ const AddEmpoylee = () => {
                     variant="filled"
                     onChange={handleChange('salary')}
                 />
+
+                <ContainerSelect variant="filled">
+                    <InputLabel id="selectOffice">Cargo</InputLabel>
+                    <SelectInput
+                        labelId="selectOffice"
+                        value={values.office}
+                        onChange={handleChange('office')}
+                    >
+                        {options}
+                    </SelectInput>
+                </ContainerSelect>
+
+                <Button click={sendForm} text={'Enviar'} />
             </Form>
-            <Button click={sendForm} text={'Enviar'} />
+            
         </Container>
         
     );

@@ -5,32 +5,12 @@ let baseUrl =
 
 let token = window.localStorage.getItem("token");
 
-const buscaAndamentoPedido = (andamento) =>({
-  type: "VER_ANDAMENT0",
-  isWaiting: andamento,
+const getEmployees = (employess) =>({
+  type: "GET_EMPLOYEES",
+  employees: employess,
 })
 
-const buscaRestaurantes = (restaurantes) => ({
-  type: "PEGA_RESTAURANTES",
-  restaurants: restaurantes,
-});
-
-const buscaProdutos = (produtos) => ({
-  type: "PEGA_PRODUTOS",
-  products: produtos,
-});
-
-const apareceLoading = (mostraLoad) => ({
-  type: "LOADING",
-  isOpen: mostraLoad,
-})
-
-const buscaEndereco = (endereco) => ({
-  type: "PEGA_ENDERECO",
-  endereco: endereco,
-});
-
-export const pegaRestaurantes = async (dispatch) => {
+export const getEmployees = async (dispatch) => {
   try {
     const response = await axios.get(`${baseUrl}/restaurants`, {
       headers: {
@@ -43,19 +23,6 @@ export const pegaRestaurantes = async (dispatch) => {
   }
 };
 
-//export const pegaAndamentoPedido = async (dispatch) => {
-//  try {
-//    const response = await axios.get(`${baseUrl}/active-order`, {
-//      headers: {
-//        auth: token,
-//      },
-//    });
-//    dispatch(buscaAndamentoPedido(response.data.order));
-//  } catch (err) {
-//    console.log(err);
-//  }
-//};
-
 export const pegaProdutos = async (id, dispatch) => {
   try {
     const response = await axios.get(`${baseUrl}/restaurants/${id}`, {
@@ -67,24 +34,6 @@ export const pegaProdutos = async (id, dispatch) => {
   } catch (err) {
     console.log(err);
   }
-};
-
-export const pegaEndereço = async (dispatch) => {
-  const response = await axios.get(`${baseUrl}/profile/address`, {
-    headers: {
-      auth: token,
-    },
-  });
-  return response.data.address;
-};
-
-export const getProfile = async () => {
-  const response = await axios.get(`${baseUrl}/profile`, {
-    headers: {
-      auth: token,
-    },
-  });
-  return response.data.user;
 };
 
 export const upDateProfile = (form, dispatch) => {

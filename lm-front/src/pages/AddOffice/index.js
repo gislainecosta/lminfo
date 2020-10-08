@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Context from '../../functions/Context';
+
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
@@ -26,7 +28,6 @@ const AddOffice = () => {
     const sendForm = () =>{
         console.log(values.type, values.description)
     }
-
 
     return(
         <Container>
