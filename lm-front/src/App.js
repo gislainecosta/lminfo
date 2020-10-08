@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useReducer, useEffect } from "react";
 import './App.css';
-import Header from './components/Header/index'
 
-import Router from './components/Router'
+import { CardReducer, initialState, } from "./functions/CardReducer";
+import CardContext from './functions/CardContext';
+import { pegaRestaurantes } from './functions/integracao'
+import { pegaEndereço } from './functions/integracao'
+
+import Router from './components/Router/Router'
 
 function App() {
   return (
     <div id='app'>
-      <Header />
-      <section id='body'>
-        <Router />
-      </section>
+      <Router />
     </div>
   );
 }

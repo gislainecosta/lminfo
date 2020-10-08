@@ -1,5 +1,6 @@
 import React, { useState }from 'react';
 
+import Header from '../../components/Header'
 import {
     ContainerList,
     ContainerEmployee,
@@ -40,7 +41,7 @@ const EmployeesList = () => {
             surname: 'Costa',
             photo: PhotoProfile,
             office: 'Product Owner',
-            birthDate: '28/02/2018',
+            birthDate: '22/02/1998',
             salary: '7000'
         },
         {
@@ -95,11 +96,13 @@ const EmployeesList = () => {
             <Title>Lista de Funcionários</Title>
             {offices.map((office) => {
                 return <ContainerEmployee>
-                    <Office>{office.type}</Office>
-                    <Description>
-                        <CardTravelIcon style={{ fontSize: 20 }}/> 
-                        <i>&nbsp; "{office.description}"</i>
-                    </Description>
+                    <Office>
+                        <CardTravelIcon style={{ color: '#ca0000', fontSize: 32 }} />
+                        &nbsp; 
+                        {office.type}
+                    </Office>
+                    <Description><i>"{office.description}"</i></Description>
+                    
                     {
                         employees.filter((employee) => {
                             return employee.office === office.type
