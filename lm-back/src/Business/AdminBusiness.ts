@@ -1,15 +1,14 @@
-import { AdminSignupDTO, AdminReqDTO} from "../Models/Admin"
-import AdminDb from '../Data/AdminDb';
+import { AdminSignupDTO, AdminReqDTO } from "../Models/Admin";
+import AdminDb from "../Data/AdminDb";
 import IdGenerator from "../Services/IdGenerator";
 import HashManager from "../Services/HashManager";
 import Authenticator from "../Services/Authenticator";
-
 
 export default class AdminBusiness {
   private adminDb = new AdminDb();
 
   public async signupAdmin(admin: AdminReqDTO) {
-    if ( !admin.email || !admin.password) {
+    if (!admin.email || !admin.password) {
       throw new Error("Input Inválido");
     }
 

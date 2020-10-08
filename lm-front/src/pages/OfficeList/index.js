@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext }from 'react';
+
+import Context from '../../functions/Context';
+
 import {
     ContainerList,
     Title,
@@ -13,25 +16,9 @@ import ExtensionIcon from '@material-ui/icons/Extension';
 import CardTravelIcon from '@material-ui/icons/CardTravel';
 
 const OfficeList = () => {
-    const [offices, setOffices] = useState([
-        {
-            id: '1',
-            type: 'Product Owner',
-            description: 'Responsável pela entrega do projeto, supervisiona o time de desenvolvedores, pensando sempre na qualidade do código e nas funcionalidades do produto.'
-        },
-        {
-            id: '2',
-            type: 'Desenvolvedor Front-end',
-            description: 'Responsável pela interface das estruturas web, sempre pensando na experiência do usuário.'
-        },
-        {
-            id: '3',
-            type: 'Desenvolvedor Back-end',
-            description: 'Responsável pela implementação da regra de negócio e criação/manutenção do banco de dados.'
-        },
-    ])
+    const officeContext = useContext(Context);
 
-    const officesList = offices.map((office) => {
+    const officesList = officeContext.offices.map((office) => {
         let icon = ''
         switch (office.type) {
             case 'Desenvolvedor Back-end':

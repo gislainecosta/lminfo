@@ -1,6 +1,6 @@
 import moment from "moment";
 
-import EmployeeDb from '../Data/EmployeeDb';
+import EmployeeDb from "../Data/EmployeeDb";
 import IdGenerator from "../Services/IdGenerator";
 import { NewEmployeeDTO, EmployeeReqDTO, Employee } from "../Models/Employee";
 
@@ -15,19 +15,18 @@ export default class EmployeeBusiness {
 
       const employee: Employee = await this.employeeDb.getEmployeeById(id);
 
-      const employeeBd = employee.birthDate
-      
+      const employeeBd = employee.birthDate;
+
       const date: string = moment(employeeBd).format("DD/MM/YYYY");
-      
 
       const employeeObject: Employee = {
         id: employee.id,
         name: employee.name,
-        surname:employee.surname,
+        surname: employee.surname,
         photo: employee.photo,
         birthDate: date,
         salary: employee.salary,
-        office: employee.office
+        office: employee.office,
       };
 
       return employeeObject;
@@ -51,7 +50,13 @@ export default class EmployeeBusiness {
   }
 
   public async newEmployee(employee: EmployeeReqDTO) {
-    if (!employee.name || !employee.surname || !employee.office || !employee.birthDate || !employee.photo) {
+    if (
+      !employee.name ||
+      !employee.surname ||
+      !employee.office ||
+      !employee.birthDate ||
+      !employee.photo
+    ) {
       throw new Error("Input Inválido");
     }
 
@@ -65,7 +70,7 @@ export default class EmployeeBusiness {
       photo: employee.photo,
       office: employee.office,
       birthDate: employee.birthDate,
-      salary: employee.salary
+      salary: employee.salary,
     };
 
     await this.employeeDb.newEmployee(newEmployee);
