@@ -3,6 +3,9 @@ import React from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
+import CakeIcon from '@material-ui/icons/Cake';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+
 import {
     EmployeeWrapper,
     ContainerEmployee,
@@ -11,8 +14,6 @@ import {
     Name,
     Details,
     DetailsSection,
-    ActionsSection,
-    Actions,
     ActionsIcons
 } from './styles';
 
@@ -22,29 +23,31 @@ const EmployeeDetails = (props) => (
             <PhotoWrapper><Photo src={props.photo} alt='Foto-perfil'/></PhotoWrapper>
             <DetailsSection>
                 <Name>{props.name}</Name>
-                <Details><b>Data de Nascimento:</b> {props.birthDate}</Details>
-                <Details><b>Salário:</b> R$ {props.salary},00</Details>
+                <Details>
+                    <CakeIcon style={{ color: '#f83333', fontSize: 24, marginRight: '1%' }} />
+                    {props.birthDate}
+                </Details>
+                <Details>
+                    <MonetizationOnIcon style={{ color: '#f83333', fontSize: 24, marginRight: '1%' }} />
+                    R$ {props.salary},00
+                </Details>
             </DetailsSection>
     
-            <ActionsSection>
-                <Actions>Ações</Actions>
-                <ActionsIcons>
-                    <EditIcon 
-                        style={{
-                            fontSize: 40,
-                            cursor: 'pointer',
-                            margin: '5% 10%'
-                        }}
-                    />
-                    <DeleteForeverIcon 
-                        style={{
-                            fontSize: 40,
-                            cursor: 'pointer', 
-                            margin: '5% 10%'
-                        }}
-                    />
-                </ActionsIcons>
-            </ActionsSection>
+            <ActionsIcons>
+                <EditIcon 
+                    style={{
+                        fontSize: 40,
+                        cursor: 'pointer',
+                    }}
+                />
+                <DeleteForeverIcon 
+                    style={{
+                        fontSize: 40,
+                        cursor: 'pointer', 
+                    }}
+                />
+            </ActionsIcons>
+
         </ContainerEmployee>
     </EmployeeWrapper>
 );

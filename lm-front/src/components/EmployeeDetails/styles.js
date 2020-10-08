@@ -1,25 +1,23 @@
 import styled from "styled-components";
 
 export const EmployeeWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 98%;
-    height: 30vh;
-    margin-bottom: 2%;
-    border-radius: 20px;
-    background: transparent linear-gradient(138deg, #0ad9e7 0%, #11749d 40%, #dd0e05 100%) 0% 0% no-repeat padding-box;
+    width: 100%;
+    height: 32vh;
+    overflow: hidden;
+    border-radius: 10%;
+    margin-bottom: 5%;
 `
 
 export const ContainerEmployee = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 20px;
     padding: 2%;
-    width: 99%;
-    height: 94%;
-    background-color: #00182c;
+    width: 100%;
+    height: 100%;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(234deg, #6f00ff 0%, #752bff 28%, #4b45ff 52%, #00d8ff 100%);
 `
 
 export const PhotoWrapper = styled.section`
@@ -29,8 +27,8 @@ export const PhotoWrapper = styled.section`
     width: 11vw;
     height: 11vw;
     border-radius: 50%;
-    background: transparent linear-gradient(138deg, #890058 0%, #2700bd 100%) 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 12px #69fef2;
+    background: transparent linear-gradient(38deg, #6f00ff 0%, #00d8ff 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #6f00ff;
 `
 
 export const Photo = styled.img`
@@ -43,31 +41,21 @@ export const Name = styled.h3`
 `
 
 export const DetailsSection = styled.section`
-    width: 70%;
+    width: 74%;
     margin-left: 2%;
-`
-
-export const ActionsSection = styled.section`
-    width: 15%;
-    margin-right: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 `
 
 export const ActionsIcons = styled.section`
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 8%;
+    height: 100%;
 `
 
 export const Details = styled.p`
     margin-left: 2%;
     font-size: 1.3rem;
 `
-
-export const Actions = styled.h3`
-    font-size: 1.6rem;
-`
-

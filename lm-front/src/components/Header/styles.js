@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    display: flex;
+export const HeaderWrapper = styled.div`
     width: 100vw;
+    overflow-x: hidden;
+
+    @media screen and (max-device-width: 600px) {
+    }
+`;
+
+export const HeaderContainer = styled.div`
+    display: flex;
+    width: 100%;
     background-color: #000f1c;
     padding: 0 2%;
     justify-content: space-between;
@@ -21,7 +29,7 @@ export const Container = styled.div`
 
 export const Shadow = styled.div`
     height: 18vh;
-    width: 100vw;
+    width: 100%;
     z-index: 90;
     position: fixed;
     top:0;
@@ -33,18 +41,23 @@ export const Shadow = styled.div`
 
 export const Logo = styled.img`
     height: 95%;
-    margin: 0 40% 0 5%;
+    margin: 0 60% 0 5%;
 `;
 
 export const IconContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
 `;
 
-export const Title = styled.p`
-    font-size: 3rem;
-    margin: 0;
-    margin-right: 20%;
+export const Photo = styled.img`
+    width: 5.4vw;
+    border-radius: 50%;
+    border: 4px solid #4b03e6
 `;
