@@ -7,9 +7,7 @@ export class OfficeController {
   async listOffices(req: Request, res: Response): Promise<void> {
     try {
       const officeBusiness = new OfficeBusiness();
-      const offices = await officeBusiness.listOffices(
-        req.headers.token as string
-      );
+      const offices = await officeBusiness.listOffices();
 
       res.status(200).send(offices);
     } catch (error) {

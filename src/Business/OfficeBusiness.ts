@@ -6,12 +6,8 @@ import { NewOfficeDTO, Office } from "../Models/Office";
 export default class OfficeBusiness {
   private officeDb = new OfficeDb();
 
-  public async showOffice(token: string, id: string): Promise<any> {
+  public async showOffice(id: string): Promise<any> {
     try {
-      if (!token) {
-        throw new Error("Por favor, faça login");
-      }
-
       const office: Office = await this.officeDb.getOfficeById(id);
 
       return office;
@@ -20,12 +16,8 @@ export default class OfficeBusiness {
     }
   }
 
-  public async listOffices(token: string): Promise<[]> {
+  public async listOffices(): Promise<[]> {
     try {
-      if (!token) {
-        throw new Error("Por favor, faça login");
-      }
-
       const offices = await this.officeDb.listOffices();
 
       return offices;

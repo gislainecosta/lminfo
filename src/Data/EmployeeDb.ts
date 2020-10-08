@@ -17,7 +17,6 @@ export default class EmployeeDb extends BaseDatabase {
         `
       );
       return result[0][0];
-
     } catch (error) {
       throw new Error(error.sqlMessage || error.message);
     }
@@ -51,6 +50,19 @@ export default class EmployeeDb extends BaseDatabase {
           salary: employee.salary,
         })
         .into(EmployeeDb.TABLE_EMPLOYEE);
+    } catch (error) {
+      throw new Error(error.sqlMessage || error.message);
+    }
+  }
+
+  async deleteEmployee(id: string): Promise<any> {
+    try {
+      await this.getconnection().raw(
+        `
+          DELETE FROM ${EmployeeDb.TABLE_EMPLOYEE}
+          WHERE id = "${id}"
+        `
+      );
     } catch (error) {
       throw new Error(error.sqlMessage || error.message);
     }

@@ -32,6 +32,7 @@ export class AdminController {
         adminData.email,
         adminData.password
       );
+      
 
       res.status(200).send({ token: accessToken });
     } catch (error) {
