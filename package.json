@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/manejebem/webadmin-backend#readme",
   "dependencies": {
+    "knex-mariadb": "^2.0.0",
     "@types/axios": "^0.14.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/bluebird": "^3.5.32",
